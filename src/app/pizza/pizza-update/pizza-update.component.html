@@ -1,0 +1,12 @@
+<p>pizza-update works!</p>
+<div class="container">
+   <div class="row" >
+        <input type="text" name="pizzaId" [(ngModel)]="pizza.pizzaId"/>
+        <input type="text" name="pizzaName" [(ngModel)]="pizza.pizzaName"/>
+        <input type="text" name="price" [(ngModel)]="pizza.price"/>
+        <div class="col-md-2">
+            <button (click)="updatePizza(pizza.pizzaId,pizza.price)">update pizza</button>
+        </div>    
+    </div>
+
+</div>

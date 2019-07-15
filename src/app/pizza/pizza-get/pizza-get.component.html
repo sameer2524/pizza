@@ -1,0 +1,16 @@
+<a routerLink="/pizza/add">Add New pizza</a>
+<hr>
+<div class="container">
+  <div *ngIf="selectedPizza" class="row" >
+        <app-pizza-update [pizza]="selectedPizza"></app-pizza-update>
+   </div>    
+    <div class="row" *ngFor="let pizza of pizzas" (click)="onSelection(pizza)" >
+                <div class="col-md-3">{{pizza.pizzaId}}</div>
+                <div class="col-md-3">{{pizza.pizzaName}}</div>
+                <div class="col-md-3">{{pizza.price}}</div>
+                <a routerLink="/pizza/delete/{{pizza.pizzaId}}">DELETE</a><hr> 
+               <!-- <a routerLink="/pizza/ordered/{{pizza.pizzaId}}">OREDRED</a><hr> -->
+     </div>
+
+
+</div>

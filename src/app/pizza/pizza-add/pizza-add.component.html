@@ -1,0 +1,40 @@
+<div class="container">
+    <form [formGroup]="angForm" novalidate>
+             <div class="form-group">
+                 <label for="pizzaId" class="col-md-4">pizza Id</label>
+                 <input type="text" class="form-control" formControlName="pizzaId" #pizzaId>
+             </div>
+             <div class="alert alert-danger" *ngIf="angForm.controls['pizzaId'].invalid && 
+                 (angForm.controls['pizzaId'].dirty || angForm.controls['pizzaId'].touched)">
+                 <div *ngIf="angForm.controls['pizzaId'].errors.required">
+                     pizza Id must be entered
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="pizzaName" class="col-md-4">pizza Name </label>
+                 <input type="text" class="form-control" formControlName="pizzaName" #pizzaName>
+             </div>
+             <div class="alert alert-danger" *ngIf="angForm.controls['pizzaName'].invalid && 
+                 (angForm.controls['pizzaName'].dirty || angForm.controls['pizzaName'].touched)">
+                 <div *ngIf="angForm.controls['pizzaName'].errors.required">
+                     pizza Name must be entered
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="price" class="col-md-4">Price</label>
+                 <input type="text" class="form-control" formControlName="price" #price>
+             </div>
+                 <div class="alert alert-danger" *ngIf="angForm.controls['price'].invalid && 
+                     (angForm.controls['price'].dirty || angForm.controls['price'].touched)">
+                     <div *ngIf="angForm.controls['price'].errors.required">
+                         price must be entered
+                     </div>
+                 </div>
+             <div class="form-group">
+                 <button (click)="addPizza(pizzaId.value,pizzaName.value,price.value)" id=1
+                 [disabled]="angForm.invalid || angForm.pristine" class="btn-btn-primary"> 
+                     Add pizza
+                 </button>
+             </div>
+         </form>
+ </div>
